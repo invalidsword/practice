@@ -1,5 +1,5 @@
 package strategy.pattern;
-
+//first change
 public class taxByPercentage implements taxMethod 
 {
 
