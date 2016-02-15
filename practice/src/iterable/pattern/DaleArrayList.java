@@ -1,6 +1,7 @@
 package iterable.pattern;
 
-public class DaleArrayList {
+public class DaleArrayList 
+{
 
 	private int[] data = new int[10];
 	private int index = 0;
