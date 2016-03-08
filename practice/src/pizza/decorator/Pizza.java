@@ -1,5 +1,6 @@
 package pizza.decorator;
 
-public interface Pizza {
+public interface Pizza 
+{
 	public String listIngredient();
 }
