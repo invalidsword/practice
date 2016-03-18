@@ -2,7 +2,8 @@ package template.pattern;
 
 public class TrafficBasedScheduler extends AbstractScheduler 
 {
-	private int deliveryDelay = 10;
+	private int deliveryDelay = 20;
+	
 	public TrafficBasedScheduler(String pName) 
 	{
 		super(pName);

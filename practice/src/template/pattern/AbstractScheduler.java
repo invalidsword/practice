@@ -7,9 +7,8 @@ import java.util.Queue;
 
 public abstract class AbstractScheduler implements Scheduler 
 {
-	private Queue<Biker> aBikers = new LinkedList<Biker>();
-	private List<SchedulerObserver> aObservers = new ArrayList<SchedulerObserver>();
-	private boolean bikerAvailability;
+	private static Queue<Biker> aBikers = new LinkedList<Biker>();
+	private static List<SchedulerObserver> aObservers = new ArrayList<SchedulerObserver>();
 	private Biker recipient;
 	private String aName;
 	private Location newestLocation;
@@ -23,8 +22,15 @@ public abstract class AbstractScheduler implements Scheduler
 	{
 		newestLocation = pLocation;
 		
-		//call checkAvailability
-		//call basicSchedule
+		if(checkAvailability())
+		{
+			notifyObservers();
+		}
+		else
+		{
+			System.out.println("No bikers available yet to deliver.");
+		}
+
 	}
 	
 	private boolean checkAvailability()
@@ -40,9 +46,9 @@ public abstract class AbstractScheduler implements Scheduler
 		}
 	}
 	
-	public void addBiker(Biker aBiker) 
+	public void addBiker(Biker pBiker) 
 	{
-		aBikers.add(aBiker);
+		aBikers.add(pBiker);
 	}
 	
 	public void addObserver(SchedulerObserver pScheduleObserver)
@@ -59,5 +65,5 @@ public abstract class AbstractScheduler implements Scheduler
 	}
 	
 	protected abstract void basicSchedule(Location pLocation);
-	
+	protected abstract int getTime();
 }

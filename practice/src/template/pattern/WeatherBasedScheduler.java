@@ -3,6 +3,7 @@ package template.pattern;
 public class WeatherBasedScheduler extends AbstractScheduler
 {
 	private int deliveryDelay = 10;
+	
 	public WeatherBasedScheduler(String pName) 
 	{
 		super(pName);
