@@ -8,5 +8,16 @@ public class FunStruff
 		plinkette = "yes";
 		
 		System.out.println(plinkette);
+		
+		Lou louie = new Lou();
+		
+	}
+}
+
+class Lou
+{
+	private void sayHey()
+	{
+		System.out.println("hey");
 	}
 }
