@@ -28,3 +28,4 @@ public class VisibilityIssue extends Thread
 		vi.enoughSaid();
 	}
 }
+//2 Threads : main and vi

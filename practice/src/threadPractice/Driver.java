@@ -11,6 +11,7 @@ public class Driver
 		
 		inc.start();
 		pri.start();
-		
+		//Q: if(is?) printing and adding (those operations) are atomic, then is there an absolute need to synchro?
+		//yes: pri could print number before inc SAVed register that contained the newly incremented number - operations not atomic
 	}
 }

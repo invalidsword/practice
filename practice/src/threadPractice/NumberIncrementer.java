@@ -16,6 +16,16 @@ public class NumberIncrementer implements Runnable
 		while(true)
 		{
 			box.add(1);
+			
+			try 
+			{
+				Thread.sleep(1000);
+			} 
+			catch (InterruptedException e) 
+			{
+				e.printStackTrace();
+			}
+			
 		}
 		
 	}

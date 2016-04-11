@@ -8,18 +8,33 @@ public class NumberBox
 {
 	
 	private final Lock aLock = new ReentrantLock();
-	private final Condition aCond = aLock.newCondition();
+	private final Condition aHaveAdded = aLock.newCondition();
 	
-	private int aNum = 0;
+	private long aNum = 0;
 	
 	
 	public void add(int pNum)
 	{
-		aNum += pNum;
+		aLock.lock();
+		try{
+			aNum += pNum;
+			aHaveAdded.signal();
+		}
+		finally
+		{
+			aLock.unlock();
+		}
 	}
 	
 	public void whatsInTheBox()
 	{
+		aLock.lock();
+		try{
 		System.out.println(aNum);
+		}
+		finally
+		{
+			aLock.unlock();
+		}
 	}
 }
