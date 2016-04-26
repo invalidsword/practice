@@ -30,7 +30,7 @@ public class JoiningHands
 			{
 				try
 				{
-					t1.join(); //Waits for t1 thread to die before starting.
+					t1.join(); //t2 waits for t1 thread to die before starting.
 					System.out.println("T2 completed normally");
 				}
 				catch(InterruptedException e)

@@ -43,7 +43,7 @@ public class Account
 			{
 				try
 				{
-					aEnoughCash.await(); //The current thread suspends its execution until it is signalled or interrupted letting other threads add funds
+					aEnoughCash.await(); //The current thread (aTeen) suspends its execution until it is signalled or interrupted letting other threads add funds
 				}
 				catch (InterruptedException e)
 				{

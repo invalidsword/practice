@@ -7,6 +7,8 @@ public class ClubBouncer{
 	public static int legalAgeLimit = 18;
 	private int lastEntryAge; //age of the last person who was let in
 	
+	private ClubBouncer(){}
+	
 	//yes you're allowed in or no you're not
 	public boolean allowsEntry(ClubVisitor visitor)
 	{
